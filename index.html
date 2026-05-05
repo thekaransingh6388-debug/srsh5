@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Stock Market Kings | Telegram Channel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0b1120 0%, #111827 100%);
+            font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* main card container */
+        .card {
+            max-width: 500px;
+            width: 100%;
+            background: rgba(18, 25, 45, 0.75);
+            backdrop-filter: blur(12px);
+            border-radius: 56px;
+            border: 1px solid rgba(34, 197, 94, 0.25);
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 255, 100, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.01);
+        }
+
+        /* inner padding */
+        .content {
+            padding: 32px 28px 42px;
+        }
+
+        /* logo + name section */
+        .channel-badge {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+
+        .logo-circle {
+            background: linear-gradient(145deg, #1f2a48, #0f172a);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 18px -8px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
+            border: 1px solid rgba(34,197,94,0.4);
+        }
+
+        .logo-circle span {
+            font-size: 46px;
+            filter: drop-shadow(0 4px 6px black);
+        }
+
+        .channel-name h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #ffffff, #b9ffcf);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+
+        .channel-name p {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .verified {
+            background: #22c55e20;
+            padding: 2px 8px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            color: #86efac;
+        }
+
+        /* highlight tagline */
+        .tagline {
+            background: linear-gradient(95deg, #0f2120, #0c1622);
+            padding: 14px 18px;
+            border-radius: 28px;
+            margin: 20px 0 24px 0;
+            border-left: 4px solid #22c55e;
+            font-weight: 500;
+            color: #cbd5e6;
+            font-size: 0.95rem;
+        }
+
+        /* bullets - features */
+        .features {
+            margin: 28px 0 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+            background: #111a2b60;
+            padding: 8px 14px;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+            transition: all 0.2s;
+        }
+
+        .feature-item:hover {
+            background: #1f2a4660;
+            transform: translateX(4px);
+        }
+
+        .feature-icon {
+            font-size: 28px;
+        }
+
+        .feature-text {
+            font-weight: 500;
+            color: #e2e8f0;
+            font-size: 1rem;
+        }
+
+        .feature-text strong {
+            color: #4ade80;
+            font-weight: 700;
+        }
+
+        /* 3-5 lines about stocks section */
+        .stock-highlight {
+            background: #0b1020dd;
+            border-radius: 32px;
+            padding: 18px 20px;
+            margin: 28px 0 32px;
+            border: 1px solid #2d3a5e;
+            box-shadow: 0 8px 14px rgba(0,0,0,0.2);
+        }
+
+        .stock-highlight h3 {
+            color: #facc15;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stock-highlight p {
+            color: #cbd5e1;
+            line-height: 1.55;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .stock-highlight p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* JOIN TELEGRAM BUTTON */
+        .join-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(95deg, #1e9f4a, #15803d);
+            border: none;
+            padding: 18px 12px;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 60px;
+            transition: all 0.25s;
+            box-shadow: 0 12px 20px -12px black;
+            letter-spacing: 0.5px;
+            margin: 12px 0 20px;
+            font-family: inherit;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .join-btn:hover {
+            background: linear-gradient(95deg, #22b455, #166534);
+            transform: translateY(-2px);
+            box-shadow: 0 18px 28px -12px #22c55e40;
+        }
+
+        .join-btn:active {
+            transform: translateY(1px);
+        }
+
+        /* small cta under button */
+        .guarantee {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #6c7a91;
+            margin-top: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        hr {
+            border-color: #2d3850;
+            margin: 20px 0 12px;
+        }
+
+        /* responsiveness */
+        @media (max-width: 480px) {
+            .content {
+                padding: 24px 20px 34px;
+            }
+            .channel-name h2 {
+                font-size: 1.5rem;
+            }
+            .logo-circle {
+                width: 68px;
+                height: 68px;
+            }
+            .logo-circle span {
+                font-size: 36px;
+            }
+            .join-btn {
+                font-size: 1.2rem;
+                padding: 15px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="content">
+        <!-- Logo + Channel Name -->
+        <div class="channel-badge">
+            <div class="logo-circle">
+                <span>📊🔥</span>
+            </div>
+            <div class="channel-name">
+                <h2>Stock Market Kings</h2>
+                <p>⚡ Official Telegram <span class="verified">✓ VERIFIED</span></p>
+            </div>
+        </div>
+
+        <!-- Short punchline -->
+        <div class="tagline">
+            🚀 Nifty • BankNifty • Stocks • Intraday & Swing
+        </div>
+
+        <!-- Bullet features (daily 3-5 calls, live analysis) -->
+        <div class="features">
+            <div class="feature-item">
+                <span class="feature-icon">🎯</span>
+                <span class="feature-text"><strong>3-5+ HIGH CONFIDENCE CALLS</strong> daily — Equity & F&O</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">📡</span>
+                <span class="feature-text"><strong>LIVE STOCK ANALYSIS</strong> with levels & entry/exit</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">📈</span>
+                <span class="feature-text"><strong>MARKET INSIGHTS</strong> — pre-market report & news flow</span>
+            </div>
+        </div>
+
+        <!-- 3-5 lines about stock market (High converting content) -->
+        <div class="stock-highlight">
+            <h3>📉📈 WHY 8000+ TRADERS JOIN US ?</h3>
+            <p>✅ <strong>Daily 3-5 intraday & swing calls</strong> with proper risk reward — no random tips.</p>
+            <p>✅ <strong>Live stock market analysis</strong> during market hours + Nifty/BankNifty support-resistance.</p>
+            <p>✅ <strong>Positional stock recommendations</strong>, breakout setups & option chain insights.</p>
+            <p>✅ <strong>Real time guidance</strong> for small & big capital — grow consistently.</p>
+            <p>✅ Free learning resources + psychology sessions for disciplined trading !</p>
+        </div>
+
+        <!-- JOIN BUTTON (Telegram) -->
+        <a href="https://t.me/+YOUR_CHANNEL_LINK" target="_blank" class="join-btn" id="telegramJoinBtn">
+            💬 JOIN TELEGRAM CHANNEL 💬
+        </a>
+
+        <!-- small extra trust line -->
+        <div class="guarantee">
+            <span>🔒 100% Free Channel</span>
+            <span>⏱️ Live Alerts</span>
+            <span>🏆 No spam</span>
+        </div>
+
+        <hr />
+        <div style="text-align: center; font-size: 0.7rem; color:#475569;">
+            📍 Start winning with pro stock market calls | Join 10k+ happy members
+        </div>
+    </div>
+</div>
+
+<!-- small script to redirect properly (already link works) but adds extra safety 
+    you can replace the href with your actual telegram invite link. -->
+<script>
+    // Optional: you can dynamically update link or track clicks
+    const joinBtn = document.getElementById('telegramJoinBtn');
+    // Bhai, yaha apna asli Telegram channel link daal do (replace 'YOUR_CHANNEL_LINK')
+    // example: https://t.me/stockmarketkings
+    
+    // Agar aap link change karna chahte ho to ye line badal do:
+    const correctLink = "https://t.me/stockmarketkings";   // <----  🔁 YAHAN APNA TELEGRAM CHANNEL LINK DAALE 🔁 
+    
+    joinBtn.href = correctLink;
+    
+    // Click event for any additional conversion tracking (optional)
+    joinBtn.addEventListener('click', function(e) {
+        console.log("Telegram Join button clicked! High converting action.");
+        // You can add google analytics or facebook pixel event here
+    });
+</script>
+
+</body>
+</html>
